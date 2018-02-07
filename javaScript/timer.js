@@ -1,4 +1,4 @@
-var countDownDate = new Date("Feb 10, 2018 00:00:00").getTime();
+var countDownDate = new Date("Feb 12, 2018 00:00:00").getTime();
 
 var day=document.getElementById('day');
 var hour=document.getElementById('hour');

@@ -10,7 +10,7 @@
 	jQuery(window).bind('scroll', function () {
     if ($(window).scrollTop() > -100) {
         $('.mu-navbar').addClass('mu-nav-show');
-        
+
 	    } else {
 	        $('.mu-navbar').removeClass('mu-nav-show');
 	    }
@@ -21,8 +21,8 @@
 	/* ----------------------------------------------------------- */
 	/*  2. EVENT TIME COUNTER
 	/* ----------------------------------------------------------- */
-	
-	$('#mu-event-counter').countdown('2018/02/10').on('update.countdown', function(event) {
+
+	$('#mu-event-counter').countdown('2018/02/12').on('update.countdown', function(event) {
 	  var $this = $(this).html(event.strftime(''
 	    + '<span class="mu-event-counter-block"><span>%D</span> Days</span> '
 	    + '<span class="mu-event-counter-block"><span>%H</span> Hours</span> '
@@ -30,10 +30,10 @@
 	    + '<span class="mu-event-counter-block"><span>%S</span> Secs</span>'));
 	});
 
-	
+
     /* ----------------------------------------------------------- */
 	/*  3. MENU SMOOTH SCROLLING
-	/* ----------------------------------------------------------- */ 
+	/* ----------------------------------------------------------- */
 
 	 //MENU SCROLLING WITH ACTIVE ITEM SELECTED
 
@@ -54,7 +54,7 @@
 	menuItems.click(function(e){
 	  var href = $(this).attr("href"),
 	      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+22;
-	  jQuery('html, body').stop().animate({ 
+	  jQuery('html, body').stop().animate({
 	      scrollTop: offsetTop
 	  }, 1500);
 	  e.preventDefault();
@@ -64,7 +64,7 @@
 	jQuery(window).scroll(function(){
 	   // Get container scroll position
 	   var fromTop = $(this).scrollTop()+topMenuHeight;
-	   
+
 	   // Get id of current scroll item
 	   var cur = scrollItems.map(function(){
 	     if ($(this).offset().top < fromTop)
@@ -73,40 +73,40 @@
 	   // Get the id of the current element
 	   cur = cur[cur.length-1];
 	   var id = cur && cur.length ? cur[0].id : "";
-	   
+
 	   if (lastId !== id) {
 	       lastId = id;
 	       // Set/remove active class
 	       menuItems
 	         .parent().removeClass("active")
 	         .end().filter("[href=\\#"+id+"]").parent().addClass("active");
-	   }           
+	   }
 	})
 
 
-	
+
 	/* ----------------------------------------------------------- */
 	/*  4. VIDEO POPUP
 	/* ----------------------------------------------------------- */
 
    $('.mu-video-play-btn').on('click', function(event) {
-	   
+
         event.preventDefault();
-        
+
         $('.mu-video-iframe-area').addClass('mu-video-iframe-display');
-       
+
     });
-   
+
     // when click the close btn
 
     // disappear iframe window
-    
+
     $('.mu-video-close-btn').on('click', function(event) {
-	    
+
 	    event.preventDefault();
-	    
+
 		$('.mu-video-iframe-area').removeClass('mu-video-iframe-display');
-		
+
     });
 
     // stop iframe if it is play while close the iframe window
@@ -120,18 +120,18 @@
     // when click overlay area
 
      $('.mu-video-iframe-area').on('click', function(event) {
-	    
+
 	    event.preventDefault();
-	    
+
 		$('.mu-video-iframe-area').removeClass('mu-video-iframe-display');
-		
+
     });
 
 	$('.mu-video-iframe-area, .mu-video-iframe').on('click', function(e){
 	    e.stopPropagation();
 	});
 
-		
+
 	/* ----------------------------------------------------------- */
 	/*  5. SPEAKERS SLIDEER ( SLICK SLIDER )
 	/* ----------------------------------------------------------- */
@@ -156,29 +156,29 @@
 		  ]
 		});
 
-		
+
 
 
 
 	/* ----------------------------------------------------------- */
-	/*  6. BOOTSTRAP ACCORDION 
-	/* ----------------------------------------------------------- */ 
+	/*  6. BOOTSTRAP ACCORDION
+	/* ----------------------------------------------------------- */
 
 		/* Start for accordion #1*/
 		$('#accordion .panel-collapse').on('shown.bs.collapse', function () {
 		$(this).prev().find(".fa").removeClass("fa-angle-up").addClass("fa-angle-down");
 		});
-		
+
 		//The reverse of the above on hidden event:
-		
+
 		$('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
 		$(this).prev().find(".fa").removeClass("fa-angle-down").addClass("fa-angle-up");
 		});
 
 
 	/* ----------------------------------------------------------- */
-	/*  7. MOBILE MENU CLOSE 
-	/* ----------------------------------------------------------- */ 
+	/*  7. MOBILE MENU CLOSE
+	/* ----------------------------------------------------------- */
 
 	jQuery('.mu-menu').on('click', 'li a', function() {
 	  $('.mu-navbar .in').collapse('hide');
@@ -188,11 +188,6 @@
 
 
 
-	
-	
+
+
 })( jQuery );
-
-
-
-  
-	

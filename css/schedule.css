@@ -16,7 +16,7 @@ li>a{
     border-radius: 10px;
 
 }
-.nav-item>.nav-link:hover{
+.nav-item.nav-link:hover{
     background-color: aqua;
     color: black;
 }
